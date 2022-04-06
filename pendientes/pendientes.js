@@ -10,9 +10,6 @@ array.filter(condición); investigar mas
 el metodo map() crea un nuevo array con los resultados de las llamada a la funcion indicada aplicados a cada uno de sus elementos
 el metodo reduce() aplica una funcion a un acumulador y a cada valor de un array de izq a der para reducirlo a un valor unico
 */
-  
-
-
 
 /*****************************************************************************/
 //Patrón PubSub
