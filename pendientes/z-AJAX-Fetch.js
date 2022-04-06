@@ -4,7 +4,7 @@
 /*****************************************************************************/
 /*JSON es el acrónimo de JavaScript Object Notation. Notación de objeto JavaScript. Es
 un objeto JavaScript pero con algunos detalles de implementación que nos permitirán
-serializarlo para poder utilizarlo como intercambio de datos entre servicios.*/
+serializarlo para poder utilizarlo como intercambio de datos entre servicios.xxx*/
 
 
 //Los detalles de implementación son que las propiedades del objeto deben ser Strings
