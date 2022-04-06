@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0px; 
+    background-color: hsl(235, 33%, 73%); 
+}
+
+body{
+    padding: 10px;
+    margin: 10px; 
+}
+
+#menu {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 20%;
+    position: absolute;
+  }
+
+#container{ 
+    padding: 10px;
+    margin-top: 10px;
+    left: 21%;
+    width: 100%;
+    position: relative;    
+  }
+ 

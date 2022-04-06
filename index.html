@@ -1,68 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis apuntes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="menu">
-        <h3>Temario</h3>        
-        <h4>contenido</h4>      
-        <h5>Javascript desde cero.</h5>
-        <ul>
-            <li>Fundamentos de la programación y trabajo con variables</li>
-            <li>Cambiar textos y contenidos dinámicamente</li>
-            <li>Edición de HTML y CSS con Javascript</li>
-            <li>Generar sentencias y funciones</li>
-            <li>Librerías: Qué son y qué puedo hacer con JQuery</li>
-            <li>Crear eventos a partir de elementos del HTML</li>
-        </ul>
-        <h5>Javascript Avanzado.</h5>
-        <ul>
+  <div id="menu">
+    <h3>Temario Javascript</h3>
 
-            <li>Comprender el paradigma de Prototipos</li> 
-            <li>¿Cómo manipular los contenidos de una página en tiempo real y crearlos de forma dinámica?</li> 
-            <li>Construir bloques de código reutilizables y modulares</li> 
-            <li>Geolocalización: Cómo Interactuar con la ubicación del usuario</li> 
-            <li>Utilizar JSON para intercambiar datos</li> 
-            <li>Almacenar información en el navegador utilizando la API HTML5</li> 
-            <li>Realizar pedidos a un servidor sin recargar la página (AJAX)</li> 
-            <li>Optimizar la performance del programa Javascript y comprender el flujo de trabajo de un desarrollador frontend </li>             
-        </ul>
-            
-            
-        <h4>Basico</h4>
-        <ul>
-            <li>Variables</li>
-            <li></li>
-            <li></li>
-        </ul>
+    <input id="min" type="button" value="Minimizar">
+    <input id="max" type="button" value="Maximizar">
 
-        <h4>Funciones</h4>
-        <h4>DOM</h4>
-        <h4>Eventos</h4>
-        <h4>AJAX</h4>
-        <h4>Fetch</h4>
+    <h4 id="contenido">contenido</h4>
+    <div id="contenido-info" style="display: none">
+      <h5>Javascript desde cero.</h5>
+      <ul>
+        <li>Fundamentos de la programación y trabajo con variables</li>
+        <li>Cambiar textos y contenidos dinámicamente</li>
+        <li>Edición de HTML y CSS con Javascript</li>
+        <li>Generar sentencias y funciones</li>
+        <li>Librerías: Qué son y qué puedo hacer con JQuery</li>
+        <li>Crear eventos a partir de elementos del HTML</li>
+      </ul>
+      <h5>Javascript Avanzado.</h5>
+      <ul>
+        <li>Comprender el paradigma de Prototipos</li>
+        <li>¿Cómo manipular los contenidos de una página en tiempo real y crearlos de forma dinámica?</li>
+        <li>Construir bloques de código reutilizables y modulares</li>
+        <li>Geolocalización: Cómo Interactuar con la ubicación del usuario</li>
+        <li>Utilizar JSON para intercambiar datos</li>
+        <li>Almacenar información en el navegador utilizando la API HTML5</li>
+        <li>Realizar pedidos a un servidor sin recargar la página (AJAX)</li>
+        <li>Optimizar la performance del programa Javascript y comprender el flujo de trabajo de un desarrollador
+          frontend</li>
+      </ul>
     </div>
-    <div id="container">
-        <div id="tem1">
-            <h5>Variables</h5>
-            <p> VAR datos = undefined; (no usar var) <br>
-                CONST crea una constante cuyo valor no cambia durante el tiempo <br>
-                LET define el ámbito de la variable al ámbito donde ha sido <br>
-                Variables "hosting" .. declarada al final del js <br>
-            </p>
-            <h5>Operadores aritméticos</h5>
-            <p> typeof 5; -> number <br>
-                typeof false; -> boolean <br>
-                typeof "Juan"; -> string <br>
-                typeof undefined; -> undefined <br> 
-            </p>
 
-        </div>
+    <h4 id="basico">Basico</h4>
+    <div id="basico-info" style="display: none">
+      <ul>
+        <li id="basico-info1">Variables Operadores Condicionales</li>
+        <li id="basico-info2">Array</li>
+        <li id="basico-info3">Objetos</li>
+        <li id="basico-info3-1">clases</li>
+        <li id="basico-info3-2">Herencia</li>
+      </ul>
+    </div>
+
+    <h4 id="funciones">Funciones</h4>
+    <div id="funciones-info" style="display: none">
+      <ul>
+        <li id="funciones-info4">Metodos string</li>
+        <li id="funciones-info5">Metodos Numeros</li>
+        <li id="funciones-info6">Funciones</li>
+        <li id="funciones-info7">Funciones Flcha</li>
+        <li id="funciones-info8">Closure</li>
+      </ul>
+    </div>
+
+    <h4 id="dom">DOM</h4>
+
+    <h4 id="eventos">Eventos</h4>
+    <h4>Loops</h4>
+    <h4>AJAX</h4>
+    <h4>Fetch</h4>
+
+  </div>
+
+  <div id="container">
+    <!-- Basico -->
+    <div id="tem1" class="basico" style="display: none">
+      <h4>Variables</h4>
+      <p> VAR datos = undefined; (no usar var) <br>
+        CONST crea una constante cuyo valor no cambia durante el tiempo <br>
+        LET define el ámbito de la variable al ámbito donde ha sido <br>
+        Variables "hosting" .. declarada al final del js <br>
+      </p>
+      <h4>Operadores aritméticos</h4>
+      <p> typeof 5; -> number <br>
+        typeof false; -> boolean <br>
+        typeof "Juan"; -> string <br>
+        typeof undefined; -> undefined <br>
+      </p>
+      <h4>Condicionales (ternario)</h4>
+      <p>
+        condición ? valor_si_true : valor_si_false <br>
+        (true) ? 5 : 2; <br>
+        Devuelve 5<br><br>
+        Igualdad entre objetos Debemos utilizar el operador identidad ===
+      </p>
+    </div>
+
+    <div id="tem2" class="basico" style="display: none">
+      <h4>Array</h4>
+      var miArray = [];<br>
+      var miArray = new Array();<br>
+      var miArray = [1, 2, 3, 4]; // Array de números<br>
+      var miArray = ["Hola", "que", "tal"]; // Array de Strings<br>
+      var miArray = [ {propiedad: "valor1" }, { propiedad: "valor2" }]; // Array de objetos<br>
+      var miArray = [[2, 4], [3, 6]]; // Array de arrays, (Matriz);<br>
+      var miArray = [1, true, [3,2], "Hola", {clave: "valor"}]; // Array mixto
+      <br> <br>
+      Se accede a los elementos del array a través de su índice <br>
+      var miArray = ["uno", "dos", "tres"];<br>
+      miArray[1]; // Devuelve: "dos"<br>
+      miArray.length; Conocer su longitud - Devuelve 3
+    </div>
+
+    <div id="tem3" class="basico" style="display: none">
+      <h4>Objeto</h4>
+      Un objeto es una colección de variables y funciones agrupadas de manera estructural.
+      <pre>
+          <code>
+            var libroAngular = { 
+            titulo: 'Desarrollo web ágil con AngularJS', 
+            paginas: 64, 
+            formatos: ["PDF", "ePub", "Mobi"], 
+            publicado: false,
+            propiedad : "autor"
+            }; 
+          </code>
+        </pre>
+      Crear un objeto
+      <pre>
+          <code>
+            var miObjeto = { propiedad: "valor" };
+            var miObjeto = new Object({ propiedad: "valor" });            
+          </code>
+        </pre>
+      Desesctructuracion de objetos
+      <pre>
+          <code>
+            const {titulo, paginas, publicado} = libroAngular; 
+            console.log(titulo, paginas, publicado)              
+          </code>
+        </pre>
+      llamar o modificar
+      <pre>
+          <code>
+            libroAngular.titulo; // Desarrollo web ágil con AngularJS 
+            libroAngular['paginas']; // 64             
+          </code>
+        </pre>
+      Con la notación array, podemos acceder a las propiedades con variables.<br>
+      var propiedad = "autor";<br>
+      libroAngular[propiedad]; // "Carlos Azaustre"<br>
+      Pero no funciona con la notación punto:<br>
+      var propiedad = "autor";<br>
+      libroAngular.propiedad; // undefined<br><br>
+
+      Con funciones
+      <pre>
+          <code>
+            var libroAngular = {
+                    paginas: 64,
+                    leer: function(){console.log("He leído el libro de AngularJS");}
+            };
+            libroAngular.leer(); // Devuelve: "He leído el libro de AngularJS"            
+          </code>
+        </pre>
+      Objetos anidados
+      <pre>
+          <code>
+            var libro = {
+                  titulo: "Desarrollo Web ágil con AngularJS",
+                  autor: { nombre: "Carlos Azaustre",
+                          nacionalidad: "Española",
+                          edad: 30
+                        }
+            }            
+          </code>
+        </pre>
+
+      Objeto Prototype <br>
+      Un problema importante que tiene este tipo de estructura, es que cuando creamos un
+      nuevo objeto a partir de esta clase, reservará espacio en memoria para toda la clase
+      incluyendo atributos y métodos. Con un objeto solo creado no supone mucha
+      desventaja, pero imaginemos que creamos varios objetos:
+
+      Para solucionar esto podemos hacer uso del objeto Prototype que permite que objetos
+      de la misma clase compartan métodos y no sean replicados en memoria de manera
+      ineficiente. La forma correcta de implementar la clase Inventario sería la siguiente:
+      <pre>
+          <code>
+            function Inventario (nombre) {
+              this.nombre = nombre;
+              this.articulos = [];
+              };
+            
+            Inventario.prototype = {
+              add: function (nombre, cantidad) {
+                this.articulos[nombre] = cantidad;
+              },
+              borrar: function (nombre) {
+                delete this.articulos[nombre];
+              },
+              cantidad: function (nombre) {
+                return this.articulos[nombre];
+              },
+              getNombre: function () {
+                return this.nombre;
+              }
+            };
+          </code>
+        </pre>
+
+      De esta manera, si queremos crear un nuevo objeto de la clase Inventario y usar sus
+      métodos, lo podemos hacer como veníamos haciendo hasta ahora, sólo que
+      internamente será más eficiente el uso de la memoria por parte de JavaScript y
+      obtendremos una mejora en el rendimiento de nuestras aplicaciones.
+
+
 
     </div>
+
+    <!-- Clases -->
+
+    <div id="tem3-1" class="basico" style="display: none">
+      <h4>Clases en ECMAScript 6</h4>
+
+      El ejemplo anterior del Inventario , transformado a ES6 sería tal que así
+      <pre>
+        <code>
+          class Inventario {
+            constructor(nombre) {
+              this.nombre = nombre;
+              this.articulos = [];
+            }
+            add (nombre, cantidad) {
+              this.articulos[nombre] = cantidad;
+            }
+            borrar (nombre) {
+              delete this.articulos[nombre]
+            }
+            cantidad (nombre) {
+              return this.articulos[nombre]
+            }
+            getNombre () {
+              return this.nombre;
+            }
+          }
+
+      Utilizando la palabra reservada class creamos una clase que sustituye a la función
+      prototipal de la versión anterior. <br><br>
+      El método especial constructor sería el que se definía en la función constructora
+      anterior. Después los métodos add , borrar , cantidad y getNombre estarían dentro
+      de la clase y sustituirían a las funciones prototipales de la versión ES5. <br>
+      // Su utilización es igual que en la versión anterior
+      var libros = new Inventario("Libros");
+      libros.add("AngularJS", 3);
+      libros.add("JavaScript", 10);
+      libros.add("NodeJS", 5);
+      libros.cantidad("AngularJS"); // 3
+      libros.cantidad("JavaScript"); // 10
+      libros.borrar("JavaScript");
+      libros.cantidad("JavaScript"); // undefined
+
+
+        </code>
+      </pre>
+
+
+    </div>
+
+
+    <div id="tem3-2" class="basico" style="display: none">
+      <h4>Herencia</h4>
+
+      Con esta nueva sintáxis podemos implementar herencia de una forma muy sencilla.
+      Imagina que tienes una clase Vehículo de la siguiente manera:*/
+
+      <pre>
+          <code>
+            class Vehiculo {
+              constructor (tipo, nombre, ruedas) {
+                this.tipo = tipo;
+                this.nombre = nombre;
+                this.ruedas = ruedas
+              }
+              getRuedas () {
+                return this.ruedas
+              }
+              arrancar () {
+                console.log(`Arrancando el ${this.nombre}`)
+              }
+              aparcar () {
+                console.log(`Aparcando el ${this.nombre}`)
+              }
+            }
+    
+            Y quieres crear ahora una clase Coche que herede de vehículo para poder utilizar los
+            métodos que esta tiene. Esto lo podemos hacer con la clase reservada extends
+            y con super() llamamos al constructor de la clase que hereda
+    
+            class Coche extends Vehiculo {
+              constructor (nombre) {
+                super('coche', nombre, 4)
+              }
+            }
+    
+            Si ahora creamos un nuevo objeto Coche podemos utilizar los métodos de la clase Vehiculo
+    
+            let fordFocus = new Coche('Ford Focus')
+            fordFocus.getRuedas() // 4
+            fordFocus.arrancar() // Arrancando el Ford Focus
+              }
+            } 
+          </code> 
+        </pre>
+    </div>
+
+    <!-- Funciones -->
+    <div id="tem4" class="metodos" style="display: none">
+      <h4>Metodos string</h4>
+
+      "javascript"[2] // Acceso como array, devuelve el tercer carácter "v", ya que la primera posición <br>
+      "javascript".length() // Devuelve 10<br>
+      "javascript".charCodeAt(2) // Devuelve el caracter en formato UNICODE de "v", el 118<br>
+      "javascript".indexOf("script"); // Devuelve el índice donde comienza el string "script", el 4<br>
+      "javascript".substring(4,10); // Devuelve la parte del string comprendida entre los indices<br><br>
+
+      Métodos de Array<br>
+      var miArray = [3, 6, 1, 4];<br>
+      miArray.sort(); // Devuelve un nuevo array con los valores ordenados: [1, 3, 4, 6]<br>
+      miArray.pop(); // Devuelve el último elemento del array y lo saca. <br>
+      miArray.push(2); // Inserta un nuevo elemento en el array y devuelve la nueva longitud del array<br>
+      miArray.reverse(); // Invierte el array, [2,4,3,1]<br><br>
+      var resultados = miArray.map(function(elemento) {return elemento *= 2;});<br>
+      var resultado = miArray.filter(function(elemento) {return elemento % 3 === 0;});<br><br>
+      var miArray = [4, 8, 15, 16, 23, 42];<br>
+      miArray.slice(2); // [15, 16, 23, 42]<br>
+      miArray.slice(2, 4); // [15, 16] (la posición de fin no es inclusiva)<br>
+      miArray.slice(2, -1); // [15, 16, 23]<br>
+      miArray.slice(2, -2); // [15, 16]<br><br>
+
+      Método muy útil es join()<br>
+      sirve para crear un string con los elementos del array<br>
+      uniéndolos con el "separador" que le pasemos como parámetro a la función.<br>
+      <pre>
+        <code>
+          var valor = 3;
+          var template = [
+            "&lt;li&gt;",
+            valor,
+            "&lt;/li&gt;"
+          ].join("");
+          console.log(template); // Devuelve: li>3/li>
+        </code>
+      </pre>
+
+    </div>
+
+    <div id="tem5" class="metodos" style="display: none">
+      <h4>Metodos Numeros</h4>
+      <p>
+        Funciones de Number <br>
+        number.parseInt()<br>
+        number.parseFloat()<br>
+        number.toFixed(x) //Devuelve un string con el valor del numero redondeado al alza, decimales (x).<br>
+        number.toExponential(x)<br>
+        number.toString(base) <br><br>
+
+        Módulo Math<br>
+        Math.PI // Número Pi = 3.14159265...<br>
+        Math.E // Número e = 2.7182818...<br>
+        Math.random() // Número aleatorio entre 0 y 1, ej: 0.45673858<br>
+        Math.pow(2,6) // Potencia de 2 elevado a 6 = 64;<br>
+        Math.sqrt(4) // raiz cuadrada de 4 = 2<br>
+        Math.min(4,3,1) // Devuelve el mínimo del conjunto de números = 1<br>
+        Math.max(4,3,1) // Devuelve el máximo del conjunto de números = 4<br>
+        Math.floor(6.4) // Devuelve la parte entera más próxima por debajo, en este caso 6<br>
+        Math.ceil(6.4) // Devuelve la parte entera más próxima por encima, en este caso 7<br>
+        Math.round(6.4) // Redondea a la parte entera más próxima, en este caso 6<br>
+        Math.abs(x); // Devuelve el valor absoluto de un número<br>
+      </p>
+    </div>
+
+    <div id="tem6" class="funciones" style="display: none">
+      <h4>Funciones</h4>
+      <p>
+        Funciones como objetos
+        Las funciones en JavaScript son objetos, ya que todo en JavaScript es un objeto,
+        heredan sus propiedades de la clase Object .
+        Podemos guardar una función en una variable y
+        posteriormente invocarla con el operador paréntesis ()
+
+        <pre>
+          <code>
+  
+            var saludar = function (nombre) {
+              return "Hola " + nombre;
+            };
+            saludar("Carlos"); // "Hola Carlos
+            saludar; // Devuelve 'function(nombre) { return "Hola " + nombre };'
+            
+            //Funciones anidadas
+            var a = "OLA";
+            function global () {
+              var b = "K";
+              function local () {
+                var c = "ASE";
+                return a + b + c;
+              }
+              return local;
+            }
+
+            function saludar () {
+              var tipo = arguments[0];
+              var nombre = arguments[1];
+              return (tipo + ", " + nombre + "!");
+            }
+            saludar("Adios", "Carlos"); // Devuelve "Adios, Carlos!"
+            
+            Parámetros por defecto
+            function saludar (tipo, nombre) {
+              var tipo = tipo || "Hola";
+              var nombre = nombre || "Carlos";
+              return (tipo + ", " + nombre + "!");
+            }
+            saludar(); // "Hola, Carlos!"
+            saludar("Adios"); // "Adios, Carlos!"
+            saludar("Hasta luego", "Pepe"); // "Hasta luego, Pepe!" 
+            
+          </code>
+        </pre>
+        Para acceder desde el exterior a las funciones internas,
+        tenemos que invocarlas con el operador doble paréntesis ()() .
+
+
+        global(); // Devuelve la función local: "function local() { var c ="ASE"..."" <br>
+        global()(); // Devuelve la ejecución de la función local: "OLAKASE" <br>
+        var closure = global(); <br>
+        closure(); // Devuelve lo mismo que global()(): "OLAKASE" <br>
+      </p>
+    </div>
+
+    <div id="tem7" class="funciones" style="display: none">
+      <h4>Funciones Flechas</h4>
+
+    </div>
+
+    <div id="tem8" class="funciones" style="display: none">
+      <h4>Closure</h4>
+
+      <p>Un Closure es una función que encapsula una serie de variables y definiciones locales
+        que únicamente serán accesibles si son devueltas con el operador return . JavaScript
+        al no tener una definición de clases como tal (como por ejemplo en Java, aunque con la
+        versión ECMAScript6 esto cambia un poco) este patrón de creación de closures, hace
+        posible modularizar nuestro código y crear algo parecido a las clases.
+      </p>
+      <pre>
+          <code>
+          var miContador = (function () {
+          var _contador = 0; // Por convención, a las variables "privadas" se las llama con un `_` delante
+          function incrementar () {
+          return _contador++;
+          }
+          function decrementar () {
+          return _contador--;
+          }
+          function valor () {
+          return _contador;
+          }
+          return {
+          incrementar: incrementar,
+          decrementar: decrementar,
+          valor: valor
+          }
+          })();
+          miContador.valor(); // 0
+          miContador.incrementar();
+          miContador.incrementar();
+          miContador.valor(); // 2
+          miContador.decrementar();
+          miContador.valor(); // 1
+
+        </code>
+      </pre>
+
+      <p> Funciones como clases <br>
+        Un closure es muy similar a una clase, la principal diferencia es que una clase tendrá un
+        constructor que cumple el mismo cometido que el closure. Al crear un objeto a partir de
+        una clase debemos usar el parámetro new y si es un closure, al inicializar un nuevo
+        objeto, se le pasa lo que le devuelve la función cierre.</p>
+
+
+      <pre>
+        <code>
+        //Ejemplo CLOSURE
+        function inventario (nombre) {
+        var _nombre = nombre;
+        var _articulos = {};
+
+        function add (nombre, cantidad) {
+        _articulos[nombre] = cantidad;
+        }
+        function borrar (nombre) {
+        delete _articulos[nombre];
+        }
+        function cantidad (nombre) {
+        return _articulos[nombre];
+        }
+        function nombre () {
+        return _nombre;
+        }
+        return {
+        add: add,
+        borrar: borrar,
+        cantidad: cantidad,
+        nombre: nombre
+        }
+        }
+
+        var libros = inventario("libros");
+        libros.add("AngularJS", 3);
+        libros.add("JavaScript", 10);
+        libros.add("NodeJS", 5);
+        libros.cantidad("AngularJS"); // 3
+        libros.cantidad("JavaScript"); // 10
+        libros.borrar("JavaScript");
+        libros.cantidad("JavaScript"); // undefined
+
+
+        //Ejemplo CLASE
+        function Inventario (nombre) {
+        this.nombre = nombre;
+        this.articulos = [];
+        this.add = function (nombre, cantidad) {
+        this.articulos[nombre] = cantidad;
+        }
+        this.borrar = function (nombre) {
+        delete this.articulos[nombre];
+        }
+        this.cantidad = function (nombre) {
+        return this.articulos[nombre];
+        }
+        this.getNombre = function () {
+        return this.nombre;
+        }
+        }
+
+        var libros = new Inventario("Libros");
+        libros.add("AngularJS", 3);
+        libros.add("JavaScript", 10);
+        libros.add("NodeJS", 5);
+        libros.cantidad("AngularJS"); // 3
+        libros.cantidad("JavaScript"); // 10
+        libros.borrar("JavaScript");
+        libros.cantidad("JavaScript"); // undefined
+
+
+        </code>
+      </pre>
+
+    </div>
+
+    <div id="tem9" class="doom" style="display: none">
+      <h4>DOOM</h4>
+
+      métodos para acceder y manipular los nodos.
+
+      <pre>
+          <code>
+            getElementById(id) //  : Devuelve el elemento con un id específico.
+            getElementsByTagName(tagname) // : Devuelve los elementos con un nombre de tag específico.
+            getElementsByClassName(classname) // : Devuelve los elementos con un nombre de clase específico.
+            getAttribute(attributeName) // : Devuelve el valor del atributo con nombre attributeName SE USA MEJOR CON GETID
+            querySelector(selector) // : Devuelve un único elemento que corresponda con el selector , ya sea por tag, id, o clase.
+            querySelectorAll(selector) // : Devuelve un array con los elementos que correspondan con la query introducida en selector
+          </code>
+        </pre>
+
+      Manipular el DOM con las siguientes funciones
+
+      <pre>
+          <code>
+            createElement(name) // : Crea un elemento HTML con el nombre que le pasemos en el parámetro name.
+            createTextNode(text) // : Crea un nodo de texto que puede ser añadido a un elemento HTML.
+            createTextAttribute(attribute) // : Crea un atributo que puede ser añadido posteriormente a un elemento HTML.
+            appendChild(node) //: Nos permite hacer hijo un elemento a otro.
+            insertBefore(new target) // : Permite insertar un elemento o nodo new antes del indicado en target.
+            removeAttribute(attribute) // : Elimina el atributo de nombre attribute del nodo desde el que se le llama.
+            removeChild(child) // : Elimina el nodo hijo que se indica con child
+            replaceChild(new old) // : Reemplaza el nodo old por el que se indica en el parámetro new.                 
+          </code>
+        </pre>
+
+      Propiedades de los nodos del DOM
+
+      <pre>
+          <code> 
+            attributes //: Nos devuelve un objeto con todos los atributos que posee un nodo.
+            className //: Permite setear o devolver el nombre de la clase (para CSS) que tenga el nodo si la tiene.
+            id //: Igual que className pero para el atributo id
+            innerHTML //: Devuelve o permite insertar código HTML (incluyendo tags y texto) dentro de un nodo.
+            nodeName //: Devuelve o nombre del nodo, si es un div devolverá DIV .
+            nodeValue //: Devuelve el valor del nodo. Si es de tipo element devolverá null.
+                        //Pero por ejemplo si es un nodo de tipo texto, devolverá ese valor.
+            style //: Permite insertar código CSS para editar el estilo.
+            tagName //: Devuelve el nombre de la etiqueta HTML correspondiente al nodo.
+                    //  Similar a nodeName, pero solo en nodos de tipo tag HTML.
+            title //: Devuelve o permite modificar el valor del atributo title de un nodo.
+            childNodes //: Devuelve un array con los nodos hijos del nodo desde el que se llama.
+            firstChild //: Devuelve el primer hijo.
+            lastChild //: Devuelve el último hijo.
+            previousSibling //: Devuelve el anterior "hermano" o nodo al mismo nivel.
+            nextSibling //: Devuelve el siguiente "hermano" o nodo al mismo nivel.
+            ownerDocument //: Devuelve el nodo raiz donde se encuenta el nodo desde el que se llama.
+            parentNode //: Devuelve el nodo padre del nodo que se llama.
+          </code>
+        </pre>
+
+      <pre>
+        <code>
+          Vemos a continuación un ejemplo de código que utilice varias cosas de las que hemos visto en teoría:
+          var newElem = document.createElement('div')
+          newElem.id = 'nuevoElemento'
+          newElem.className = 'bloque'
+          newElem.style = 'background:red; width:200px; height:200px'
+          var body = document.querySelector('body')
+          body.appendChild(newElem)
+          Resultado: un cuadrado rojo -> descomentar si queres ver
+          <!--<div id="nuevoElemento" class="bloque" style="background:red; width:200px; height:200px" </div>-->
+
+        </code>
+      </pre>
+
+
+
+
+    </div>
+
+    <div id="tem10" class="eventos" style="display: none">
+      <h4>Eventos</h4>
+      Asociamos a un elemento de la web el evento
+      <pre>
+        <code>
+          var target = document.querySelector('#respuesta');
+          target.addEventListener('click', onClickHandler, false);
+          // Función que manejará el evento
+          function onClickHandler(e) {
+              e.preventDefault(); // evita que se dispare una acción por defecto
+              console.log(e);
+          }
+      </pre> 
+      <pre> 
+        <code>
+        Propagación de eventos 
+        Los eventos pueden propagarse hacia arriba en el documento. En el siguiente ejemplo
+        vamos a escuchar el evento click en el elemento header que contiene un h1 y un h2 
+
+            var header = document.querySelector('header');
+            header.addEventListener('click', function(e) {
+              console.log('Has clickado en ' + e.target.nodeName);
+            });
+
+        Con el manejador creado, se imprimirá en consola el mensaje Has clicado en seguido
+        del nombre del elemento gracias a e.target.nodeName . Si clicamos dentro del h1 nos
+        mostrará Has clickado en H1 y si lo hacemos en el h2 mostrará Has clicado en H2.
+  
+        Aunque estemos escuchando el elemento header , tenemos acceso a todos los nodos
+        que se encuentren dentro de el.
+      </code>
+      </pre> 
+      Ahora imaginemos que también añadimos un escuchador de eventos al documento raíz document como el siguiente
+      <pre>
+        <code>
+            document.addEventListener('click', function(e) {
+                console.log('Has clickado en el documento');
+            });
+
+            Cuando hagamos clic en cualquier parte de la página, nos mostrará el mensaje Has
+            clicado en el documento . Pero si clicamos en una parte del header tendremos los dos
+            mensajes por consola:
+
+            Has clicado en el documento
+            Has clicado en H1
+        </code>
+      </pre>      
+      <pre>
+        <code>
+          Si queremos mantener el escuchador en el document pero cuando hagamos clic en
+          header no salte el otro evento, podemos hacer uso de e.stopPropagation() , para
+          evitar que se propague de abajo a arriba.
+
+          header.addEventListener('click', function(e) {
+            console.log('Has clickado en ' + e.target.nodeName);
+            e.stopPropagation();
+          });
+        </code>
+      </pre>      
+    </div>
+  </div>
+
+
+  <!--Scripts-->
+  <script src="script.js"></script>
 </body>
+
+
+
 </html>
