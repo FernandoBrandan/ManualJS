@@ -25,3 +25,9 @@ Los websockets son una tecnología que permite una comunicación bidireccional (
 ambos sentidos) entre el cliente y el servidor sobre un único socket TCP. En cierta
 manera es un buen sustituto de AJAX como tecnología para obtener datos del servidor,
 ya que no tenemos que pedirlos, el servidor nos los enviará cuando haya nuevos.*/
+
+/*
+7:02:42 - Métodos de registro en console
+7:09:14 - Métodos de conteo en console
+7:11:47 - Métodos de agrupación en console
+7:15:04 - Métodos de temporización en console

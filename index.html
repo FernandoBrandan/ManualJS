@@ -70,6 +70,10 @@
     <h4>AJAX</h4>
     <h4>Fetch</h4>
 
+    <h4>
+      <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">MDN</a>
+    </h4>
+
   </div>
 
   <div id="container">
@@ -563,62 +567,177 @@
     <div id="tem9" class="doom" style="display: none">
       <h4>DOOM</h4>
 
-      métodos para acceder y manipular los nodos.
-
-      <pre>
-          <code>
-            getElementById(id) //  : Devuelve el elemento con un id específico.
-            getElementsByTagName(tagname) // : Devuelve los elementos con un nombre de tag específico.
-            getElementsByClassName(classname) // : Devuelve los elementos con un nombre de clase específico.
-            getAttribute(attributeName) // : Devuelve el valor del atributo con nombre attributeName SE USA MEJOR CON GETID
-            querySelector(selector) // : Devuelve un único elemento que corresponda con el selector , ya sea por tag, id, o clase.
-            querySelectorAll(selector) // : Devuelve un array con los elementos que correspondan con la query introducida en selector
-          </code>
-        </pre>
-
-      Manipular el DOM con las siguientes funciones
-
-      <pre>
-          <code>
-            createElement(name) // : Crea un elemento HTML con el nombre que le pasemos en el parámetro name.
-            createTextNode(text) // : Crea un nodo de texto que puede ser añadido a un elemento HTML.
-            createTextAttribute(attribute) // : Crea un atributo que puede ser añadido posteriormente a un elemento HTML.
-            appendChild(node) //: Nos permite hacer hijo un elemento a otro.
-            insertBefore(new target) // : Permite insertar un elemento o nodo new antes del indicado en target.
-            removeAttribute(attribute) // : Elimina el atributo de nombre attribute del nodo desde el que se le llama.
-            removeChild(child) // : Elimina el nodo hijo que se indica con child
-            replaceChild(new old) // : Reemplaza el nodo old por el que se indica en el parámetro new.                 
-          </code>
-        </pre>
-
-      Propiedades de los nodos del DOM
-
-      <pre>
-          <code> 
-            attributes //: Nos devuelve un objeto con todos los atributos que posee un nodo.
-            className //: Permite setear o devolver el nombre de la clase (para CSS) que tenga el nodo si la tiene.
-            id //: Igual que className pero para el atributo id
-            innerHTML //: Devuelve o permite insertar código HTML (incluyendo tags y texto) dentro de un nodo.
-            nodeName //: Devuelve o nombre del nodo, si es un div devolverá DIV .
-            nodeValue //: Devuelve el valor del nodo. Si es de tipo element devolverá null.
-                        //Pero por ejemplo si es un nodo de tipo texto, devolverá ese valor.
-            style //: Permite insertar código CSS para editar el estilo.
-            tagName //: Devuelve el nombre de la etiqueta HTML correspondiente al nodo.
-                    //  Similar a nodeName, pero solo en nodos de tipo tag HTML.
-            title //: Devuelve o permite modificar el valor del atributo title de un nodo.
-            childNodes //: Devuelve un array con los nodos hijos del nodo desde el que se llama.
-            firstChild //: Devuelve el primer hijo.
-            lastChild //: Devuelve el último hijo.
-            previousSibling //: Devuelve el anterior "hermano" o nodo al mismo nivel.
-            nextSibling //: Devuelve el siguiente "hermano" o nodo al mismo nivel.
-            ownerDocument //: Devuelve el nodo raiz donde se encuenta el nodo desde el que se llama.
-            parentNode //: Devuelve el nodo padre del nodo que se llama.
-          </code>
-        </pre>
+      Métodos de seleccion de elementos
 
       <pre>
         <code>
-          Vemos a continuación un ejemplo de código que utilice varias cosas de las que hemos visto en teoría:
+          getElementById(id): Devuelve el elemento con un id específico.
+          getElementsByTagName(tagname): Devuelve los elementos con un nombre de tag específico.
+          getElementsByClassName(classname): Devuelve los elementos con un nombre de clase específico.
+          **
+          querySelector(selector): Devuelve un único elemento que corresponda con el selector , ya sea por tag, id, o clase.
+          querySelectorAll(selector): Devuelve un array con los elementos que correspondan con la query introducida en selector
+        </code>
+      </pre>
+
+      Métodos para definir obtener y eliminar valires de atributos
+
+      <pre>
+        <code>
+          setAttribute(): 
+          getAttribute(): 
+          removeAttribute(): 
+
+          Modificar de atributos globales
+          p4 = document.querySelector(".txtNombre");
+          p4.setatribute('contentEditable', 'true')
+          p4.setatribute('dir', 'ltr') //rtl
+          p4.setatribute('hidden', 'true')
+          p4.setatribute('style', 'modifica css')
+          p4.setatribute('tabindex', '0') //focus
+          p4.setatribute('title', 'Descripcion')
+          
+          Atributo de input
+          p4.type = "Range";
+          //INPUT-> className, value, type, accept, form(boton al form externo), minlenght, placeholder, required
+          
+          style: Permite insertar código CSS para editar el estilo.
+          var.style.color = red //Cambia estilo            
+          //Para cambiar CSS encabzado.stryle.backgroindColor = 'black':              
+        </code>
+      </pre>
+
+      Clases, classList y metodos de classList
+      <pre>
+        <code>
+          add(nombre): añade clases
+          remove(nombre):
+          item(1): devuelve el valor de la posicion indicada en la clase
+          contains(nombre): verifica  true o false si contiene una clase
+          Simplifica lo anterior:
+          ->togle(nombre):   si tiene la elimina sino la agrega
+          ->togle(nombre): no si tiene la agrega sino la elimina
+            Se agrega booleano para forzar resultado
+          replace("vieja","nueva"):
+        </code>
+      </pre>
+      
+      Obtencion y modificacion de elementos
+      
+      <pre>
+        <code>
+          document.querySelector('#titulo').textContent = 'Nuevo titulo'//toda solo texto 
+          innerHTML: Devuelve o permite insertar código HTML (incluyendo tags y texto) dentro de un nodo.
+          document.querySelector('#titulo').innerHTML = 'Nuevo titulo'  //toma con etiquetas HTML  
+          document.querySelector('#titulo').outerHTML = 'Nuevo titulo'  //toma con etiquetas HTML MAS etiquetas
+          document.querySelector('#titulo').innertext = 'Nuevo titulo'  //varia depende el css NO SE RECOMIENZA
+        </code>
+      </pre>
+
+      Crear elementos
+
+      <pre>
+        <code>  
+          createElement(name): Crea un elemento HTML con el nombre que le pasemos en el parámetro name.
+          ->createTextNode(text): Crea un nodo de texto que puede ser añadido a un elemento HTML.
+          - ->appendChild(node): Nos permite hacer hijo un elemento a otro.        
+          (no usar innerHTML, porque no lo genera como objeto)
+          En resumen
+          createDocumentFragment() evita el consumo de recursos.
+          **
+          **
+          createTextAttribute(attribute): Crea un atributo que puede ser añadido posteriormente a un elemento HTML.
+          insertBefore(new target): Permite insertar un elemento o nodo new antes del indicado en target.
+          removeAttribute(attribute): Elimina el atributo de nombre attribute del nodo desde el que se le llama.
+        </code>
+      </pre>
+
+      Obtencion y modificacion de childs de Elementos
+
+      <pre>
+        <code> 
+          firstChild: Devuelve el primer hijo.
+          lastChild: Devuelve el último hijo.
+          firstElementChild: Mejor que los anteriores porque no hay que eliminar los espacios
+          lastElementChild
+          childNodes: Devuelve un nodelist con los nodos hijos del nodo desde el que se llama. *no es un array
+          children: Solo devuelve las etiqueta html, sin nodos. Recorrer con forOf.
+
+        </code>
+      </pre>
+      
+      Metodos de childs
+      <pre>
+        <code>
+          replaceChild(new old): Reemplaza el nodo old por el que se indica en el parámetro new.                 
+          removeChild(child): Elimina el nodo hijo que se indica con child
+          hasChildNodes(): verificar si tiene un elemento hijo o no
+        </code>
+      </pre>
+
+      Propiedades de los parents
+      <pre>
+        <code>
+            parentElement: sin casi iguales
+            parentNode: Devuelve el nodo padre del nodo que se llama. no se usa se confunde
+        </code>
+      </pre>
+
+      Propiedades de siblings - Mismo rango/linea/nodos hermanos
+      <pre>
+        <code>
+          previousSibling: Devuelve el anterior "hermano" o nodo al mismo nivel.
+          nextSibling: Devuelve el siguiente "hermano" o nodo al mismo nivel.
+          previousElementSibling: 
+          nextElementSibling: 
+        </code>
+      </pre>
+
+      Nodos - Extras
+      <pre>
+        <code>
+            closest(): Elemento ascendente mas cercano a nuestro selector
+        </code>
+      </pre>
+
+
+      Ejemplo de código
+      <pre>
+        <code>
+        </code>
+      </pre>
+
+      Ejemplo de código
+      <pre>
+        <code>
+          document.addEventListener('DOMContentLoaded', () => {
+
+            //this.childNodes toma espacios en blanco considerador elementos
+        
+            /**Desde el padre al hijo */   
+            const  card = document.querySelector('.card');
+            /*naveracion listas dentro de listas navs*/
+            card.children[1].children[1].textContent;
+            
+            /**Desde el hijo al padre */   
+            //this.parentNode Toma espacios en blanco
+            card.parentElement.parentElement;
+        
+            /**Entre hermanos, misma linea */
+            card.nextElementSibling;
+            card.previousElementSibling
+        
+            /**Eliminar*/ 
+            document.querySelector().remove();
+            document.querySelector().removeChild(card.children[2]);
+          })        
+        </code>
+      </pre>
+
+
+      Ejemplo de código
+      <pre>
+        <code>
           var newElem = document.createElement('div')
           newElem.id = 'nuevoElemento'
           newElem.className = 'bloque'
@@ -627,13 +746,8 @@
           body.appendChild(newElem)
           Resultado: un cuadrado rojo -> descomentar si queres ver
           <!--<div id="nuevoElemento" class="bloque" style="background:red; width:200px; height:200px" </div>-->
-
         </code>
       </pre>
-
-
-
-
     </div>
 
     <div id="tem10" class="eventos" style="display: none">
@@ -648,8 +762,12 @@
               e.preventDefault(); // evita que se dispare una acción por defecto
               console.log(e);
           }
-      </pre> 
-      <pre> 
+
+          Ejemplo
+          document.addEventListener(DOMContentLoaded, function(){ })
+
+      </pre>
+      <pre>
         <code>
         Propagación de eventos 
         Los eventos pueden propagarse hacia arriba en el documento. En el siguiente ejemplo
@@ -667,7 +785,7 @@
         Aunque estemos escuchando el elemento header , tenemos acceso a todos los nodos
         que se encuentren dentro de el.
       </code>
-      </pre> 
+      </pre>
       Ahora imaginemos que también añadimos un escuchador de eventos al documento raíz document como el siguiente
       <pre>
         <code>
@@ -682,7 +800,7 @@
             Has clicado en el documento
             Has clicado en H1
         </code>
-      </pre>      
+      </pre>
       <pre>
         <code>
           Si queremos mantener el escuchador en el document pero cuando hagamos clic en
@@ -694,7 +812,7 @@
             e.stopPropagation();
           });
         </code>
-      </pre>      
+      </pre>
     </div>
   </div>
 
